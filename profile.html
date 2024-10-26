@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Your Adopted Pet</h1>
+    <div id="adoptedPetSection" class="pet-card"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const adoptedPetSection = document.getElementById('adoptedPetSection');
+            const petName = localStorage.getItem('purchasedPet'); // Retrieve the purchased pet's name from localStorage
+            
+            if (petName) {
+                // Create the corresponding pet image and name
+                const petImages = {
+                    'Cat': 'cat.jpeg',
+                    'Dog': 'dogimage.jpeg',
+                    'Hamster': 'hamster.jpeg',
+                    'Horse': 'horse.jpg',
+                    'Parrot': 'parrot.jpeg',
+                    'Pigeon': 'piegon.jpg',
+                    'Rabbit': 'rabbit.jpeg',
+                    'Tortoise': 'tortoise.jpg'
+                };
+
+                const img = document.createElement("img");
+                img.src = petImages[petName];
+                img.alt = petName;
+                img.style.maxWidth = '60%';
+                img.style.borderRadius = '8px';
+                img.style.marginBottom = '10px';
+
+                const petNameElement = document.createElement("div");
+                petNameElement.className = 'pet-name';
+                petNameElement.textContent = petName;
+
+                adoptedPetSection.appendChild(img);
+                adoptedPetSection.appendChild(petNameElement);
+            } else {
+                adoptedPetSection.innerHTML = '<p>No pets adopted yet.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

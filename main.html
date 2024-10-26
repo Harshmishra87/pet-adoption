@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to ThePetNest</h1>
+        <p class="subtitle">Log in to start your pet adoption journey</p>
+        
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="login-button">Login</button>
+            
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

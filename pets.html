@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Pets</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Available Pets for Adoption</h1>
+    <div class="pet-grid">
+        <div class="pet-card">
+            <img src="cat.jpeg" alt="Cat">
+            <div class="pet-name">Cat</div>
+            <div class="pet-price">$150</div>
+            <button class="buy-button" onclick="buyPet('Cat')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="dogimage.jpeg" alt="Dog">
+            <div class="pet-name">Dog</div>
+            <div class="pet-price">$200</div>
+            <button class="buy-button" onclick="buyPet('Dog')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="hamster.jpeg" alt="Hamster">
+            <div class="pet-name">Hamster</div>
+            <div class="pet-price">$50</div>
+            <button class="buy-button" onclick="buyPet('Hamster')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="horse.jpg" alt="Horse">
+            <div class="pet-name">Horse</div>
+            <div class="pet-price">$1000</div>
+            <button class="buy-button" onclick="buyPet('Horse')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="parrot.jpeg" alt="Parrot">
+            <div class="pet-name">Parrot</div>
+            <div class="pet-price">$120</div>
+            <button class="buy-button" onclick="buyPet('Parrot')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="piegon.jpg" alt="Pigeon">
+            <div class="pet-name">Pigeon</div>
+            <div class="pet-price">$30</div>
+            <button class="buy-button" onclick="buyPet('Pigeon')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="rabbit.jpeg" alt="Rabbit">
+            <div class="pet-name">Rabbit</div>
+            <div class="pet-price">$80</div>
+            <button class="buy-button" onclick="buyPet('Rabbit')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="tortoise.jpg" alt="Tortoise">
+            <div class="pet-name">Tortoise</div>
+            <div class="pet-price">$100</div>
+            <button class="buy-button" onclick="buyPet('Tortoise')">Buy</button>
+        </div>
+    </div>
+
+    <script>
+        function buyPet(petName) {
+            // Store the purchased pet's name in localStorage
+            localStorage.setItem('purchasedPet', petName);
+            alert(petName + " has been bought! Check your profile.");
+
+            // Redirect to profile page after buying
+            window.location.href = 'profile.html'; // Change this to your profile page URL
+        }
+    </script>
+</body>
+</html>

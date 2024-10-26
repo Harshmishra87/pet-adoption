@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Pets</title>
+    <link rel="stylesheet" href="adopt.css">
+</head>
+<body>
+    <h1>Available Pets for Adoption</h1>
+    <div class="pet-grid">
+        <div class="pet-card">
+            <img src="pet1.jpg" alt="Pet 1">
+            <div class="pet-name">Bella</div>
+            <div class="pet-price">$200</div>
+            <button class="buy-button" onclick="buyPet('Bella')">Buy</button>
+        </div>
+        <div class="pet-card">
+            <img src="pet2.jpg" alt="Pet 2">
+            <div class="pet-name">Max</div>
+            <div class="pet-price">$250</div>
+            <button class="buy-button" onclick="buyPet('Max')">Buy</button>
+        </div>
+        <!-- Add more pets similarly -->
+    </div>
+
+    <script>
+        function buyPet(petName) {
+            // Store the purchased pet's name in localStorage
+            localStorage.setItem('purchasedPet', petName);
+            alert(petName + " has been bought! Check your profile.");
+        }
+    </script>
+</body>
+</html>

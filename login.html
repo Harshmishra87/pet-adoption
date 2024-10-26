@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to ThePetNest</h1>
+        <p class="subtitle">Log in to start your pet adoption journey</p>
+        
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="login-button">Login</button>
+            <p class="error-message" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Check for correct username and password
+            if (username === 'abc' && password === '123') {
+                // Redirect to pets page on successful login
+                window.location.href = 'pets.html'; // Change this to your pets page URL
+                return false; // Prevent form submission
+            } else {
+                errorMessage.textContent = 'Invalid username or password';
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
